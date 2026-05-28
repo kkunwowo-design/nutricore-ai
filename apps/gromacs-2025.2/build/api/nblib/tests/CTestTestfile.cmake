@@ -1,0 +1,14 @@
+# CMake generated Testfile for 
+# Source directory: /mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests
+# Build directory: /mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/api/nblib/tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test([=[NbLibSetupTests]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/nblib-setup-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/NbLibSetupTests.xml")
+set_tests_properties([=[NbLibSetupTests]=] PROPERTIES  LABELS "GTest;IntegrationTest" PROCESSORS "1" TIMEOUT "120" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;76;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;0;")
+add_test([=[NbLibTprTests]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/nblib-tpr-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/NbLibTprTests.xml")
+set_tests_properties([=[NbLibTprTests]=] PROPERTIES  LABELS "GTest;UnitTest" PROCESSORS "1" TIMEOUT "30" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;364;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;81;gmx_add_unit_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;0;")
+add_test([=[NbLibIntegrationTests]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/nblib-integration-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/NbLibIntegrationTests.xml")
+set_tests_properties([=[NbLibIntegrationTests]=] PROPERTIES  LABELS "GTest;IntegrationTest" PROCESSORS "1" TIMEOUT "120" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;104;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;0;")
+add_test([=[NbLibIntegratorTests]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/nblib-integrator-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/NbLibIntegratorTests.xml")
+set_tests_properties([=[NbLibIntegratorTests]=] PROPERTIES  LABELS "GTest;IntegrationTest" PROCESSORS "1" TIMEOUT "120" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;117;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/api/nblib/tests/CMakeLists.txt;0;")

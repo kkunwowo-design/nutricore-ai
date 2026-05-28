@@ -1,0 +1,86 @@
+
+
+
+import curses
+import random
+import time
+
+# 화면 초기화
+screen = curses.initscr()
+curses.curs_set(0)
+screen.nodelay(1)
+screen.timeout(100)
+
+# 화면 크기
+sh, sw = screen.getmaxyx()
+
+# 플레이어 시작 위치
+player_x = sw // 2
+player_y = sh - 2
+
+# 장애물 리스트
+obstacles = []
+
+score = 0
+
+while True:
+    screen.clear()
+
+    # 플레이어 출력
+    screen.addstr(player_y, player_x, "A")
+
+    # 새 장애물 생성
+    if random.randint(1, 5) == 1:
+        obstacles.append([0, random.randint(0, sw - 1)])
+
+    # 장애물 이동
+    new_obstacles = []
+    for obs in obstacles:
+        obs[0] += 1
+
+        # 충돌 검사
+        if obs[0] == player_y and obs[1] == player_x:
+            screen.clear()
+            screen.addstr(sh // 2, sw // 2 - 5, "GAME OVER")
+            screen.addstr(sh // 2 + 1, sw // 2 - 7, f"SCORE: {score}")
+            screen.refresh()
+            time.sleep(3)
+            curses.endwin()
+            quit()
+
+        # 화면 안에 있는 장애물만 유지
+        if obs[0] < sh:
+            new_obstacles.append(obs)
+            screen.addstr(obs[0], obs[1], "|")
+
+    obstacles = new_obstacles
+
+    # 입력 처리
+    key = screen.getch()
+
+    if key == curses.KEY_LEFT and player_x > 0:
+        player_x -= 1
+
+    if key == curses.KEY_RIGHT and player_x < sw - 1:
+        player_x += 1
+
+    if key == ord('q'):
+        break
+
+    score += 1
+
+    screen.addstr(0, 2, f"Score: {score}")
+    screen.refresh()
+
+curses.endwin(
+
+x
+^x
+
+o
+pq
+q
+
+q
+
+xc

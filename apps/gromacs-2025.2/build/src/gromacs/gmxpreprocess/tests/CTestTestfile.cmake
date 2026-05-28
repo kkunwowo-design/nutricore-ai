@@ -1,0 +1,14 @@
+# CMake generated Testfile for 
+# Source directory: /mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests
+# Build directory: /mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/src/gromacs/gmxpreprocess/tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test([=[GmxPreprocessTests]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/gmxpreprocess-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/GmxPreprocessTests.xml")
+set_tests_properties([=[GmxPreprocessTests]=] PROPERTIES  LABELS "GTest;SlowTest" PROCESSORS "1" TIMEOUT "480" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;51;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;0;")
+add_test([=[Pdb2gmx1Test]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/pdb2gmx1-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/Pdb2gmx1Test.xml")
+set_tests_properties([=[Pdb2gmx1Test]=] PROPERTIES  LABELS "GTest;SlowTest" PROCESSORS "1" TIMEOUT "480" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;66;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;0;")
+add_test([=[Pdb2gmx2Test]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/pdb2gmx2-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/Pdb2gmx2Test.xml")
+set_tests_properties([=[Pdb2gmx2Test]=] PROPERTIES  LABELS "GTest;SlowTest" PROCESSORS "1" TIMEOUT "480" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;74;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;0;")
+add_test([=[Pdb2gmx3Test]=] "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/bin/pdb2gmx3-test" "--gtest_output=xml:/mnt/c/Users/enduser/Desktop/gromacs-2025.2/build/Testing/Temporary/Pdb2gmx3Test.xml")
+set_tests_properties([=[Pdb2gmx3Test]=] PROPERTIES  LABELS "GTest;SlowTest" PROCESSORS "1" TIMEOUT "480" _BACKTRACE_TRIPLES "/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/testutils/TestMacros.cmake;346;add_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;82;gmx_register_gtest_test;/mnt/c/Users/enduser/Desktop/gromacs-2025.2/src/gromacs/gmxpreprocess/tests/CMakeLists.txt;0;")

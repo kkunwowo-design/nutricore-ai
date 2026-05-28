@@ -1,0 +1,47 @@
+import streamlit as st
+import pandas as pd
+
+# 1. 데이터 로드 (캐싱을 사용하여 앱 속도 최적화)
+@st.cache_data
+def load_food_data():
+    # 데이터가 'food_data.csv'에 있다고 가정
+    # 열 이름은 다운로드한 파일의 실제 컬럼명과 일치시켜야 합니다.
+    df = pd.read_csv('food_data.csv', encoding='cp949') 
+    return df
+
+# 2. 메인 UI
+st.set_page_config(page_title="NutriCore DB System", layout="wide")
+st.title("🧬 NutriCore: 식약처 DB 기반 정밀 영양 분석")
+
+col1, col2 = st.columns([1, 2])
+
+with col1:
+    st.subheader("📋 건강 데이터 입력")
+    glucose = st.number_input("공복 혈당 (mg/dL)", value=85)
+    bp = st.number_input("수축기 혈압 (mmHg)", value=120)
+    chol = st.number_input("총 콜레스테롤 (mg/dL)", value=180)
+    run = st.button("🚀 정밀 분석 실행", use_container_width=True)
+
+with col2:
+    if run:
+        df = load_food_data()
+        tab1, tab2 = st.tabs(["📊 임상 리포트", "🍎 상세 영양 정보"])
+        
+        with tab1:
+            st.write("### 🩺 임상 판정")
+            # 비정상 수치 인식 로직
+            if glucose > 100 or bp >= 130 or chol >= 200:
+                st.error("⚠️ [주의] 대사 증후군 위험 지표 감지됨. 식단 조절이 필요합니다.")
+            else:
+                st.success("✅ [정상] 건강한 수치를 유지하고 있습니다.")
+        
+        with tab2:
+            st.write("### 🔍 식약처 DB 기반 식품 정보")
+            # 전체 데이터를 표로 보여줌
+            st.dataframe(df.head(50), use_container_width=True)
+            
+    else:
+        st.info("데이터 입력 후 [🚀 정밀 분석 실행] 버튼을 눌러주세요.")
+
+st.caption("본 서비스는 식품의약품안전처_식품영양성분DB를 기반으로 구축되었습니다.")
+
